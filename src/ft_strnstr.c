@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:46:43 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 17:02:49 by secros            #+#    #+#             */
+/*   Updated: 2024/11/05 17:18:53 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# include <stdlib.h>
-# define LIBFT_H
+#include "libft.h"
 
-int		ft_isdigit(int c);
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+	size_t	j;
 
-void	*ft_memcopy(void *dest, const void *src, size_t n);
-
-size_t	ft_strlen(const char *s);
-//typedef long long	size_t;
-
-#endif
+	i = 0;
+	if (!*little)
+		return (big);
+	while (big[i] && i < len)
+	{
+		while (big[i + j] == little[j] && (j + i) < len)
+			if (!little[j++])
+				return (big[i]);
+		i++;
+		j = 0;
+	}
+	return ('\0');
+}

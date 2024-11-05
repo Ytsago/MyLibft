@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:46:43 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 16:27:08 by secros            #+#    #+#             */
+/*   Updated: 2024/11/05 16:36:43 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# include <stdlib.h>
-# define LIBFT_H
+#include "libft.h"
 
-int		ft_isdigit(int c);
+int	memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t	i;
 
-void	*ft_memcopy(void *dest, const void *src, size_t n);
-
-size_t	ft_strlen(const char *s);
-//typedef long long	size_t;
-
-#endif
+	i = 0;
+	while (i < n)
+	{
+		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
+			return ((unsigned char)(s1 + i) - (unsigned char)(s2 + i));
+		i++;
+	}
+	return (0);
+}

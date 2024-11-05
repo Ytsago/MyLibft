@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:46:43 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 15:34:01 by secros            #+#    #+#             */
+/*   Updated: 2024/11/05 15:37:11 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# include <stdlib.h>
-# define LIBFT_H
-
-int		ft_isdigit(int c);
-
-void	*ft_memcopy(void *dest, const void *src, size_t n);
-
-size_t	ft_strlen(const char *s);
-//typedef long long	size_t;
-
-#endif
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
+}

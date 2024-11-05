@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:46:43 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 17:38:43 by secros            #+#    #+#             */
+/*   Updated: 2024/11/05 17:49:00 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# include <stdlib.h>
-# define LIBFT_H
+#include "libft.h"
 
-int		ft_isdigit(int c);
+int	ft_atoi(const char *nptr)
+{
+	int	sign;
+	int	value;
 
-void	*ft_memcopy(void *dest, const void *src, size_t n);
-
-size_t	ft_strlen(const char *s);
-//typedef long long	size_t;
-
-#endif
+	sign = 1;
+	value = 0;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
+	{
+		if (*nptr == '-')
+			sign *= -1;
+		nptr++;
+	}
+	while (ft_isdigit(nptr))
+	{
+		value *= 10;
+		value += *nptr -48;
+		nptr++;
+	}
+	return (value * sign);
+}
