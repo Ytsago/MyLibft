@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:37:56 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 15:50:59 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 17:38:43 by secros            #+#    #+#             */
+/*   Updated: 2024/11/06 13:41:48 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
+	int	sign;
+	int	value;
 
-	i = ft_strlen(s);
-	while (*(s + i))
+	sign = 1;
+	value = 0;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (c == *(s + i))
-			return (s + i);
-		i--;
+		if (*nptr == '-')
+			sign *= -1;
+		nptr++;
 	}
-	return ('\0');
+	while (ft_isdigit(*nptr))
+	{
+		value *= 10;
+		value += *nptr -48;
+		nptr++;
+	}
+	return (value * sign);
 }

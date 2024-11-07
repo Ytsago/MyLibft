@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 16:27:08 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:58:36 by secros           ###   ########.fr       */
+/*   Created: 2024/11/07 13:24:44 by secros            #+#    #+#             */
+/*   Updated: 2024/11/07 13:25:10 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
-			return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
-		i++;
-	}
-	return (0);
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }

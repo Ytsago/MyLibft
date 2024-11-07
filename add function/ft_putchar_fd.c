@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:46:43 by secros           ###   ########.fr       */
+/*   Created: 2024/11/07 13:15:20 by secros            #+#    #+#             */
+/*   Updated: 2024/11/07 13:20:18 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# include <stdlib.h>
-# define LIBFT_H
+#include "../libft.h"
 
-int		ft_isdigit(int c);
-
-void	*ft_memcopy(void *dest, const void *src, size_t n);
-
-size_t	ft_strlen(const char *s);
-//typedef long long	size_t;
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

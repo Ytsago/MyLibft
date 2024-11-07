@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:41:01 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 15:06:58 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 14:01:21 by secros            #+#    #+#             */
+/*   Updated: 2024/11/07 13:34:22 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	dst_len;
-
-	dst_len = ft_strlen(dst);
-	if (size <= dst_len)
-		return (size + dst_len);
-	dst[size] = '\0';
-	while (size-- > dst_len)
-		dst[size] = src[size - dst_len];
-	return (dst_len + ft_strlen(src));
+	if (dest > src)
+	{
+		while (n--)
+			*(unsigned char *)(dest + n) = *(unsigned char *)(src + n);
+	}
+	else if (dest <= src)
+	{
+		ft_memcpy(dest, src, n);
+	}
+	return (dest);
 }

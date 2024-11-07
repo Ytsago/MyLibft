@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 17:38:43 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 17:49:00 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 15:37:56 by secros            #+#    #+#             */
+/*   Updated: 2024/11/07 14:46:02 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strchr(const char *s, int c)
 {
-	int	sign;
-	int	value;
+	size_t	i;
 
-	sign = 1;
-	value = 0;
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
-		nptr++;
-	if (*nptr == '+' || *nptr == '-')
+	i = 0;
+	while (*(s + i))
 	{
-		if (*nptr == '-')
-			sign *= -1;
-		nptr++;
+		if ((char)c == *(s + i))
+			return ((char *)(s + i));
+		i++;
 	}
-	while (ft_isdigit(nptr))
-	{
-		value *= 10;
-		value += *nptr -48;
-		nptr++;
-	}
-	return (value * sign);
+	if (*(s + i) == c)
+		return ((char *)(s + i));
+	return (0);
 }

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:37:56 by secros            #+#    #+#             */
-/*   Updated: 2024/11/05 15:50:38 by secros           ###   ########.fr       */
+/*   Created: 2024/11/05 11:33:19 by secros            #+#    #+#             */
+/*   Updated: 2024/11/07 09:30:44 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *s, int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (*(s + i))
+	while (i < n)
 	{
-		if (c == *(s + i))
-			return (s + i);
-			i++;
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
-	return ('\0');
+	return (dest);
 }
+/*
+int main(int argc, char **argv)
+{
+	int i[4] = {1, 263450, 3, 4};
+	int i2[4] = {0, 0, 0, 0};
+
+	ft_memcpy(i2, i, atoi(argv[1]) * sizeof(int));
+	for (int t = 0; t < 4; t++)
+		printf("%d, ",i2[t]);
+}*/
