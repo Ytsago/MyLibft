@@ -6,11 +6,11 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 13:15:20 by secros            #+#    #+#             */
-/*   Updated: 2024/11/07 13:20:18 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/08 16:25:01 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
