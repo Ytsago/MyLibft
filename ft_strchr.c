@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:37:56 by secros            #+#    #+#             */
-/*   Updated: 2024/11/07 14:46:02 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/09 11:41:16 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (*(s + i) == c)
+	if (*(s + i) == (char) c)
 		return ((char *)(s + i));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:33:19 by secros            #+#    #+#             */
-/*   Updated: 2024/11/07 09:30:44 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/09 13:22:34 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (!dest && !src)
+		return (dest);
 	i = 0;
 	while (i < n)
 	{

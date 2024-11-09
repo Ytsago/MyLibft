@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:46:26 by secros            #+#    #+#             */
-/*   Updated: 2024/11/08 16:56:27 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/09 11:33:55 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ static size_t	ft_tsize(const char *s, const char *set)
 	}
 	return (size);
 }
-
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

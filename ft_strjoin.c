@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 13:24:44 by secros            #+#    #+#             */
-/*   Updated: 2024/11/09 11:33:16 by secros           ###   ########.fr       */
+/*   Created: 2024/11/09 17:36:35 by secros            #+#    #+#             */
+/*   Updated: 2024/11/09 18:09:06 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	while (*s)
-		write(fd, s++, 1);
-	write(fd, "\n", 1);
+	char	*fs;
+	size_t	len1;
+	size_t	len2;
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	fs = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!fs)
+		return (NULL);
+	ft_strlcat(fs, s2, (ft_strlcpy(fs, s1, len1 + 1) + len2 + 1));
+	return (fs);
 }
