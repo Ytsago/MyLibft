@@ -9,7 +9,7 @@ LIBC =	ft_isdigit.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_tolow
 		ft_strrchr.c ft_strnstr.c ft_strdup.c ft_calloc.c ft_atoi.c 
 
 ADDITIONAL =	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c \
-				ft_substr.c ft_strtrim.c ft_striteri.c ft_strmapi.c ft_strjoin.c
+				ft_substr.c ft_strtrim.c ft_striteri.c ft_strmapi.c ft_strjoin.c ft_split.c 
 
 BONUSES = 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c\
 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c

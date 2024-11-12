@@ -1,0 +1,89 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 14:16:13 by secros            #+#    #+#             */
+/*   Updated: 2024/11/12 15:29:58 by secros           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static size_t	countsplit(const char *s, char c)
+{
+	size_t	i;
+	size_t	word;
+
+	i = 0;
+	word = 0;
+	while (s[i])
+	{
+		if ((i == 0 || s[i - 1] == c) && s[i] != c)
+			word++;
+		i++;
+	}
+	return (word);
+}
+
+static size_t	to_nextc(const char *s, char c, size_t index)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[index] != c && s[index])
+	{
+		i++;
+		index++;
+	}
+	return (i);
+}
+
+static void	freethemalloc(char **pt, size_t i)
+{
+	while (i-- > 0)
+		free(pt[i]);
+	free(pt);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	i2;
+	char	**fs;
+
+	i = 0;
+	i2 = 0;
+	fs = (char **) ft_calloc(sizeof(char *), (countsplit(s, c) + 1));
+	if (!fs)
+		return (NULL);
+	while (s[i])
+	{
+		if ((i == 0 || s[i - 1] == c) && s[i] != c)
+		{
+			fs[i2] = ft_substr(s, i, to_nextc(s, c, i));
+			if (!fs[i2])
+			{
+				freethemalloc(fs, i2);
+				return (NULL);
+			}
+			i2++;
+		}
+		i++;
+	}
+	return (fs);
+}
+
+// int main (int argc, char **argv)
+// {
+// 	char **pt;
+// 	int	i = 0;
+// 	pt = ft_split(argv[1], *argv[2]);
+
+// 	printf("%d", countsplit(argv[1], *argv[2]));
+// 	while (pt[i])
+// 		printf("%s\n", pt[i++]);
+// 	printf("%s\n", pt[i]);
+// }
