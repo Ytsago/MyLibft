@@ -38,7 +38,7 @@ bonus: $(BOBJS)
 	$(AR) $(ARFLAG) $(NAME) $?
 
 $(OBJDIR)/%.o: %.c $(INC) | $(OBJDIR)
-	$(CC) -c $(CFLAGS) $< -o $@ -I $(INC) 
+	$(CC) -c $(CFLAGS) $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
