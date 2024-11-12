@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:53:31 by secros            #+#    #+#             */
-/*   Updated: 2024/11/12 18:31:04 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/12 19:10:43 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del) (void *))
 	t_list	*n_node;
 	t_list	*n_lst;
 
-	while(lst)
+	n_lst = NULL;
+	while (lst)
 	{
 		n_node = ft_lstnew(f(lst->content));
 		if (!n_lst)
