@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:16:13 by secros            #+#    #+#             */
-/*   Updated: 2024/11/12 15:29:58 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:20:58 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static size_t	countsplit(const char *s, char c)
 	return (word);
 }
 
-static size_t	to_nextc(const char *s, char c, size_t index)
+static size_t	to_next_c(const char *s, char c, size_t index)
 {
 	size_t	i;
 
@@ -41,7 +41,7 @@ static size_t	to_nextc(const char *s, char c, size_t index)
 	return (i);
 }
 
-static void	freethemalloc(char **pt, size_t i)
+static void	free_the_mallocs(char **pt, size_t i)
 {
 	while (i-- > 0)
 		free(pt[i]);
@@ -63,10 +63,10 @@ char	**ft_split(char const *s, char c)
 	{
 		if ((i == 0 || s[i - 1] == c) && s[i] != c)
 		{
-			fs[i2] = ft_substr(s, i, to_nextc(s, c, i));
+			fs[i2] = ft_substr(s, i, to_next_c(s, c, i));
 			if (!fs[i2])
 			{
-				freethemalloc(fs, i2);
+				free_the_mallocs(fs, i2);
 				return (NULL);
 			}
 			i2++;
@@ -76,14 +76,15 @@ char	**ft_split(char const *s, char c)
 	return (fs);
 }
 
-// int main (int argc, char **argv)
-// {
-// 	char **pt;
-// 	int	i = 0;
-// 	pt = ft_split(argv[1], *argv[2]);
+/* int main (int argc, char **argv)
+{
+	char **pt;
+	int	i = 0;
+	pt = ft_split(argv[1], *argv[2]);
 
-// 	printf("%d", countsplit(argv[1], *argv[2]));
-// 	while (pt[i])
-// 		printf("%s\n", pt[i++]);
-// 	printf("%s\n", pt[i]);
-// }
+	printf("%d", countsplit(argv[1], *argv[2]));
+	while (pt[i])
+		printf("%s\n", pt[i++]);
+	printf("%s\n", pt[i]);
+}
+ */

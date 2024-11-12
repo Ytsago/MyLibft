@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:10:50 by secros            #+#    #+#             */
-/*   Updated: 2024/11/12 17:16:24 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:31:36 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,3 @@ t_list	*ft_lstlast(t_list *lst)
 		pt = pt->next;
 	return (pt);
 }
-
-// int	main()
-// {
-// 	t_list	*pt;
-// 	int a = 1;
-// 	int b = 2;
-// 	pt = ft_lstnew(&a);
-// 	ft_lstadd_front(&pt, ft_lstnew(&b));
-// 	printf("%d", pt->content);
-// }
