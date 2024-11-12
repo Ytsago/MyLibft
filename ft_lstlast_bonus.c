@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 14:45:04 by secros            #+#    #+#             */
-/*   Updated: 2024/11/10 14:09:26 by secros           ###   ########.fr       */
+/*   Created: 2024/11/10 17:10:50 by secros            #+#    #+#             */
+/*   Updated: 2024/11/10 17:46:38 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
+	t_list	*pt;
 
-	i = 0;
-	while (s[i])
-	{
-		f(i, (s + i));
-		i++;
-	}
+	pt = lst;
+	while (pt && pt->next)
+		pt = pt->next;
+	return (pt);
 }
-
-// int main ()
-// {
-// 	char	s[]= "0000000000";
-// 	printf("%s", ft_striteri(s, iter));
-// }

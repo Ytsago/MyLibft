@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 14:45:04 by secros            #+#    #+#             */
-/*   Updated: 2024/11/10 14:09:26 by secros           ###   ########.fr       */
+/*   Created: 2024/11/10 16:51:34 by secros            #+#    #+#             */
+/*   Updated: 2024/11/10 17:03:40 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	size_t	len;
+	t_list	*pt;
 
-	i = 0;
-	while (s[i])
+	len = 0;
+	pt = lst;
+	while (pt)
 	{
-		f(i, (s + i));
-		i++;
+		len++;
+		pt = pt->next;
 	}
+	return ((int) len);
 }
-
-// int main ()
-// {
-// 	char	s[]= "0000000000";
-// 	printf("%s", ft_striteri(s, iter));
-// }
