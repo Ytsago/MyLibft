@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:16:13 by secros            #+#    #+#             */
-/*   Updated: 2024/11/12 22:57:29 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/13 11:27:53 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (fs);
 }
-
-/* int main (int argc, char **argv)
-{
-	char **pt;
-	int	i = 0;
-	pt = ft_split(argv[1], *argv[2]);
-
-	printf("%d", countsplit(argv[1], *argv[2]));
-	while (pt[i])
-		printf("%s\n", pt[i++]);
-	printf("%s\n", pt[i]);
-}
- */

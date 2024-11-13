@@ -19,9 +19,9 @@ INC = libft.h
 
 SRCS = $(LIBC) $(ADDITIONAL)
 
-BSRCS = $(LIBC) $(ADDITIONAL) $(BONUSES)
+BSRCS = $(SRCS) $(BONUSES)
 
-OBJDIR = Obj
+OBJDIR = .Obj
 
 OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
 

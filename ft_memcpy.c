@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:33:19 by secros            #+#    #+#             */
-/*   Updated: 2024/11/12 22:00:54 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/13 11:28:03 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int main(int argc, char **argv)
-{
-	int i[4] = {1, 263450, 3, 4};
-	int i2[4] = {0, 0, 0, 0};
-
-	ft_memcpy(i2, i, atoi(argv[1]) * sizeof(int));
-	for (int t = 0; t < 4; t++)
-		printf("%d, ",i2[t]);
-}*/
