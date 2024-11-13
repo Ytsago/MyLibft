@@ -6,31 +6,11 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:46:26 by secros            #+#    #+#             */
-/*   Updated: 2024/11/09 11:33:55 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/13 11:05:47 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static size_t	ft_tendsize(const char *s, const char *set)
-// {
-// 	size_t	i;
-// 	size_t	i2;
-// 	size_t	size;
-
-// 	i = -1;
-// 	i2 = ft_strlen(s) - 1;
-// 	while (set[++i])
-// 	{
-// 		if (set[i] == s[i2])
-// 		{
-// 			size++;
-// 			i = -1;
-// 			i2--;
-// 		}
-// 	}
-// 	return (size);
-// }
 
 static int	is_set(const char c, const char *set)
 {

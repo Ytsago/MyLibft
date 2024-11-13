@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:45:04 by secros            #+#    #+#             */
-/*   Updated: 2024/11/10 14:09:26 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/13 11:05:10 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	}
 }
 
-// int main ()
-// {
-// 	char	s[]= "0000000000";
-// 	printf("%s", ft_striteri(s, iter));
-// }
+/* int main ()
+{
+	char	s[]= "0000000000";
+	printf("%s", ft_striteri(s, iter));
+} */
