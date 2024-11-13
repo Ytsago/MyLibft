@@ -34,8 +34,9 @@ all: $(NAME)
 $(NAME) : $(OBJS) 
 	$(AR) $(ARFLAG) $@ $?
 
-bonus: $(BOBJS) 
-	$(AR) $(ARFLAG) $(NAME) $?
+bonus: 
+	@make OBJS="$(BOBJS)"
+
 
 $(OBJDIR)/%.o: %.c $(INC) | $(OBJDIR)
 	$(CC) -c $(CFLAGS) $< -o $@
