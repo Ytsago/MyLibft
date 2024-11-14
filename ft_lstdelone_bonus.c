@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:57:53 by secros            #+#    #+#             */
-/*   Updated: 2024/11/10 18:02:56 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/14 16:26:03 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
-		del(lst->content);
-	free(lst);
+	{
+		if (del)
+			del(lst->content);
+		free(lst);
+	}
 }

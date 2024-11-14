@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 13:24:44 by secros            #+#    #+#             */
-/*   Updated: 2024/11/09 11:33:16 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/14 16:03:07 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s)
-		write(fd, s++, 1);
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

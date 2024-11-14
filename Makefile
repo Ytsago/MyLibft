@@ -35,7 +35,7 @@ $(NAME) : $(OBJS)
 	$(AR) $(ARFLAG) $@ $?
 
 bonus: 
-	@make --no-print-directory OBJS="$(BOBJS)"
+	@$(MAKE) --no-print-directory OBJS="$(BOBJS)"
 
 
 $(OBJDIR)/%.o: %.c $(INC) | $(OBJDIR)
