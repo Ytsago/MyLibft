@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/14 16:22:29 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/18 22:35:58 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ int		ft_atoi(const char *nptr);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(long nbr, int fd);
+void	ft_putnbr_base(long nbr, char *base, int base_len, int fd);
+void	hex_base(long nb, int cap);
 
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
