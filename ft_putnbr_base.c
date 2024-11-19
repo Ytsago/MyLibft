@@ -6,31 +6,60 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 21:12:19 by secros            #+#    #+#             */
-/*   Updated: 2024/11/18 22:34:44 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/19 14:28:56 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	hex_base(long nb, int cap)
+ssize_t	ft_putpointer(unsigned long long pt)
+{
+	ssize_t	i;
+
+	if (pt == 0)
+	{
+		i = write(1, "(nil)", 5);
+		if (i == -1)
+			return (-1);
+		return (i);
+	}
+	i = write(1, "0x", 2);
+	if (i == -1)
+		return (-1);
+	return (i + hex_base(pt, 'x'));
+}
+
+ssize_t	hex_base(unsigned long long nb, int cap)
 {
 	char	hex[17];
 
-	if (cap == 0)
+	if (cap == 'x')
 		ft_strlcpy(hex, "0123456789abcdef", 17);
 	else
 		ft_strlcpy(hex, "0123456789ABCDEF", 17);
-	ft_putnbr_base(nb, hex, ft_strlen(hex), 1);
+	return (ft_putnbr_base(nb, hex, (unsigned int)ft_strlen(hex), 1));
 }
 
-void	ft_putnbr_base(long nbr, char *base, int base_len, int fd)
+ssize_t	ft_putnbr_base(unsigned long long nbr,
+			char *base, unsigned int base_len, int fd)
 {
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		write(fd, "-", 1);
-	}
+	ssize_t	i;
+	ssize_t	temp;
+
+	i = 0;
+	temp = 0;
 	if (nbr >= base_len)
-		ft_putnbr_base(nbr / base_len, base, base_len, fd);
-	ft_putchar_fd(base[nbr % base_len], fd);
+	{
+		temp = ft_putnbr_base(nbr / base_len, base, base_len, fd);
+		if (temp == -1)
+			return (-1);
+	}
+	i += temp;
+	if (ft_putchar_fd(base[nbr % base_len], fd) == -1)
+		return (-1);
+	return (i + 1);
 }
+// int main ()
+// {
+// ft_putpointer();
+// }

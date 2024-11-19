@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/18 22:35:58 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/19 14:27:50 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ char	*ft_strdup(const char *s);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+ssize_t	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(long nbr, int fd);
-void	ft_putnbr_base(long nbr, char *base, int base_len, int fd);
-void	hex_base(long nb, int cap);
+ssize_t	ft_putnbr_fd(long nbr, int fd);
+ssize_t	ft_putnbr_base(unsigned long long nbr, char *base,
+			unsigned int base_len, int fd);
+ssize_t	hex_base(unsigned long long nb, int cap);
+ssize_t	ft_putpointer(unsigned long long pt);
 
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
