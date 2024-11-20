@@ -1,4 +1,5 @@
 *.o
 .Obj
 *.a
-libftTester
+.vscode
+*.out

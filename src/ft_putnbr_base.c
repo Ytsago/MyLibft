@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 21:12:19 by secros            #+#    #+#             */
-/*   Updated: 2024/11/19 14:28:56 by secros           ###   ########.fr       */
+/*   Updated: 2024/11/20 19:21:34 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ssize_t	hex_base(unsigned long long nb, int cap)
 		ft_strlcpy(hex, "0123456789abcdef", 17);
 	else
 		ft_strlcpy(hex, "0123456789ABCDEF", 17);
-	return (ft_putnbr_base(nb, hex, (unsigned int)ft_strlen(hex), 1));
+	return (ft_putnbr_base(nb, hex, 16, 1));
 }
 
 ssize_t	ft_putnbr_base(unsigned long long nbr,
@@ -59,7 +59,3 @@ ssize_t	ft_putnbr_base(unsigned long long nbr,
 		return (-1);
 	return (i + 1);
 }
-// int main ()
-// {
-// ft_putpointer();
-// }
