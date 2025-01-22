@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 18:06:13 by secros            #+#    #+#             */
-/*   Updated: 2024/12/10 16:09:31 by secros           ###   ########.fr       */
+/*   Created: 2024/11/04 17:12:26 by secros            #+#    #+#             */
+/*   Updated: 2024/12/11 14:10:43 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	ft_issign(int c)
 {
-	t_list	*pt;
-
-	if (!lst || !*lst)
-		return ;
-	while (*lst)
-	{
-		pt = *lst;
-		*lst = (*lst)->next;
-		if (pt->content)
-			del(pt->content);
-		free(pt);
-	}
+	if (c >= '-' || c <= '+')
+		return (1);
+	else
+		return (0);
 }

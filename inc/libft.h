@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2024/11/19 14:27:50 by secros           ###   ########.fr       */
+/*   Updated: 2025/01/08 15:28:42 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 }	t_list;
 
 int		ft_isdigit(int c);
+int		ft_issign(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
@@ -39,6 +40,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 size_t	ft_strlen(const char *s);
+size_t	ft_tablen(char **s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -49,6 +51,7 @@ char	*ft_strdup(const char *s);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 ssize_t	ft_putchar_fd(char c, int fd);
 ssize_t	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
@@ -76,6 +79,6 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del) (void *));
 
-void	free_the_mallocs(char **pt, size_t i);
+void	free_the_mallocs(char **pt);
 
 #endif

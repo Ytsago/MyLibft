@@ -20,11 +20,12 @@ ADDITIONAL =	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_it
 
 BONUSES = 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstmap_bonus.c \
-			ft_lstiter_bonus.c ft_putnbr_base.c\
+			ft_lstiter_bonus.c ft_putnbr_base.c get_next_line.c get_next_line_utils.c \
+			ft_atol.c ft_issign.c
 
 INCDIR = inc/
 
-INCH = libft.h ft_printf.h
+INCH = libft.h ft_printf.h get_next_line.h
 
 INC = $(addprefix $(INCDIR), $(INCH))
 
@@ -57,7 +58,7 @@ clean:
 	@echo "$(RED)Deleting object files...$(RESET)"
 	@rm -rf $(OBJDIR) && echo "$(GREEN)Done !$(RESET)"
 
-fclean: clean
+fclean:
 	@echo "$(RED)Deleting executable or library $(NAME)...$(RESET)"
 	@rm -f $(NAME) && echo "$(GREEN)Done !$(RESET)"
 

@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:16:13 by secros            #+#    #+#             */
-/*   Updated: 2024/11/14 16:22:13 by secros           ###   ########.fr       */
+/*   Updated: 2024/12/17 11:21:43 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,15 @@ static size_t	to_next_c(const char *s, char c, size_t index)
 	return (i);
 }
 
-void	free_the_mallocs(char **pt, size_t i)
+void	free_the_mallocs(char **pt)
 {
-	while (i-- > 0)
-		free(pt[i]);
+	size_t	i;
+
+	i = 0;
+	if (!pt)
+		return ;
+	while (pt[i])
+		free(pt[i++]);
 	free(pt);
 }
 
@@ -66,7 +71,7 @@ char	**ft_split(char const *s, char c)
 			fs[i2] = ft_substr(s, i, to_next_c(s, c, i));
 			if (!fs[i2])
 			{
-				free_the_mallocs(fs, i2);
+				free_the_mallocs(fs);
 				return (NULL);
 			}
 			i2++;
