@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:41:21 by secros            #+#    #+#             */
-/*   Updated: 2025/01/08 15:28:42 by secros           ###   ########.fr       */
+/*   Updated: 2025/02/07 11:45:43 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 size_t	ft_strlen(const char *s);
+size_t	count_char(char *s, char c);
 size_t	ft_tablen(char **s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -48,6 +49,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s);
+char	*ft_strappend(char *s1, char *s2);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
@@ -64,6 +66,8 @@ ssize_t	ft_putpointer(unsigned long long pt);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
+char	**ft_multi_split(char const *s, char *c);
+
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -79,6 +83,6 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del) (void *));
 
-void	free_the_mallocs(char **pt);
+void	free_the_mallocs(void **pt);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:46:03 by secros            #+#    #+#             */
-/*   Updated: 2024/12/14 13:43:13 by secros           ###   ########.fr       */
+/*   Updated: 2025/02/07 10:59:14 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*build_line(char *str, char *buff)
 	if (buff[i] == '\n')
 		end[i++] = '\n';
 	end[i] = '\0';
-	fs = ft_strfreejoin(str, end);
+	fs = ft_strappend(str, end);
 	free(end);
 	buff_cleaner(buff, i);
 	if (!fs)
@@ -52,7 +52,7 @@ static char	*read_file(int fd, char *buff)
 	size = 1;
 	while (size > 0 && !is_new_line(buff))
 	{
-		str = ft_strfreejoin(str, buff);
+		str = ft_strappend(str, buff);
 		if (!str)
 			return (NULL);
 		size = read(fd, buff, BUFFER_SIZE);

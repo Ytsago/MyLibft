@@ -1,41 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_strappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 09:29:37 by secros            #+#    #+#             */
-/*   Updated: 2025/02/07 10:58:38 by secros           ###   ########.fr       */
+/*   Created: 2025/02/07 11:02:20 by secros            #+#    #+#             */
+/*   Updated: 2025/02/07 11:02:29 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-void	buff_cleaner(char *buff, size_t i)
-{
-	size_t	j;
-
-	j = 0;
-	while (buff[i])
-		buff[j++] = buff[i++];
-	while (buff[j])
-		buff[j++] = '\0';
-}
-
-int	is_new_line(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
+#include "libft.h"
 
 char	*ft_strappend(char *s1, char *s2)
 {

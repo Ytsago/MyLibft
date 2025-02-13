@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:44:49 by secros            #+#    #+#             */
-/*   Updated: 2025/01/08 15:28:49 by secros           ###   ########.fr       */
+/*   Updated: 2025/02/07 11:45:27 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,20 @@ size_t	ft_tablen(char **s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+size_t	count_char(char *s, char c)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
 }

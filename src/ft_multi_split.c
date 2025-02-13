@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_multi_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:16:13 by secros            #+#    #+#             */
-/*   Updated: 2025/02/07 10:59:59 by secros           ###   ########.fr       */
+/*   Updated: 2025/02/07 11:00:58 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	countsplit(const char *s, char c)
+static int	is_charset(char c, char *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set && set[i])
+		if (set[i++] == c)
+			return (1);
+	return (0);
+}
+
+static size_t	countsplit(const char *s, char *c)
 {
 	size_t	i;
 	size_t	word;
@@ -21,19 +32,19 @@ static size_t	countsplit(const char *s, char c)
 	word = 0;
 	while (s[i])
 	{
-		if ((i == 0 || s[i - 1] == c) && s[i] != c)
+		if ((i == 0 || is_charset(s[i - 1], c)) && !is_charset(s[i], c))
 			word++;
 		i++;
 	}
 	return (word);
 }
 
-static size_t	to_next_c(const char *s, char c, size_t index)
+static size_t	to_next_c(const char *s, char *c, size_t index)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[index] != c && s[index])
+	while (!is_charset(s[index], c) && s[index])
 	{
 		i++;
 		index++;
@@ -41,19 +52,7 @@ static size_t	to_next_c(const char *s, char c, size_t index)
 	return (i);
 }
 
-void	free_the_mallocs(void **pt)
-{
-	size_t	i;
-
-	i = 0;
-	if (!pt)
-		return ;
-	while (pt[i])
-		free(pt[i++]);
-	free(pt);
-}
-
-char	**ft_split(char const *s, char c)
+char	**ft_multi_split(char const *s, char *c)
 {
 	size_t	i;
 	size_t	i2;
@@ -66,7 +65,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i])
 	{
-		if ((i == 0 || s[i - 1] == c) && s[i] != c)
+		if ((i == 0 || is_charset(s[i - 1], c)) && !is_charset(s[i], c))
 		{
 			fs[i2] = ft_substr(s, i, to_next_c(s, c, i));
 			if (!fs[i2])
