@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:16:13 by secros            #+#    #+#             */
-/*   Updated: 2025/02/07 10:59:59 by secros           ###   ########.fr       */
+/*   Updated: 2025/03/17 16:34:38 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,17 @@ static size_t	to_next_c(const char *s, char c, size_t index)
 	return (i);
 }
 
-void	free_the_mallocs(void **pt)
+void	free_the_mallocs(void *pt)
 {
 	size_t	i;
+	void	**tab;
 
 	i = 0;
+	tab = pt;
 	if (!pt)
 		return ;
-	while (pt[i])
-		free(pt[i++]);
+	while (tab[i])
+		free(tab[i++]);
 	free(pt);
 }
 
