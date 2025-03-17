@@ -45,7 +45,7 @@ void	ft_free(void *pt, t_garb **head)
 	}
 }
 
-void	addback_garb(t_garb **lst, t_garb *new)
+static void	addback_garb(t_garb **lst, t_garb *new)
 {
 	t_garb	*pt;
 
