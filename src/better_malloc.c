@@ -1,5 +1,4 @@
 #include "libft.h"
-#include "ft_printf.h"
 #include "better_mallocs.h"
 
 void clear_garbage(t_garb **head)
