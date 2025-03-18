@@ -13,7 +13,7 @@
 #ifndef BETTER_MALLOCS_H
 # define BETTER_MALLOCS_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 typedef struct s_garb
 {
@@ -28,6 +28,6 @@ void	*ft_malloc(size_t size, t_garb **bin);
 
 //destroy
 void	ft_free(void *pt, t_garb **head);
-void 	clear_garbage(t_garb **head);
+void	clear_garbage(t_garb **head);
 
 #endif
