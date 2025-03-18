@@ -12,7 +12,7 @@
 
 #include "better_mallocs.h"
 
-void clear_garbage(t_garb **head)
+void	clear_garbage(t_garb **head)
 {
 	t_garb	*tmp;
 	t_garb	*tmp_next;
@@ -21,7 +21,7 @@ void clear_garbage(t_garb **head)
 	while (tmp)
 	{
 		tmp_next = tmp->next;
-		if(tmp->f)
+		if (tmp->f)
 			tmp->f(tmp->content);
 		free(tmp);
 		tmp = tmp_next;
@@ -90,7 +90,7 @@ void	*add_garbage(void *pt, void (*free_pt)(void *), t_garb **head)
 	new_garb->f = free_pt;
 	new_garb->next = NULL;
 	addback_garb(head, new_garb);
-	return(pt);
+	return (pt);
 }
 
 void	*ft_malloc(size_t size, t_garb **bin)
