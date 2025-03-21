@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:18:31 by secros            #+#    #+#             */
-/*   Updated: 2025/03/21 14:56:15 by secros           ###   ########.fr       */
+/*   Updated: 2025/03/21 14:58:33 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*fill_dishwasher(void *pt, void (*free_pt)(void *), t_sink **head);
 void	*new_plate(size_t size, t_sink **bin);
 
 //destroy
-void	*remove_plate(void *pt, t_sink **head);
+void	remove_plate(void *pt, t_sink **head);
 void	do_dishes(t_sink **head);
 void	hand_wash(void *pt, t_sink **head);
 

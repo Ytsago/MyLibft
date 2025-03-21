@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 13:42:38 by secros            #+#    #+#             */
-/*   Updated: 2025/03/21 14:56:02 by secros           ###   ########.fr       */
+/*   Updated: 2025/03/21 14:58:26 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ void	hand_wash(void *pt, t_sink **head)
 	}
 }
 
-void	*remove_plate(void *pt, t_sink **head)
+void	remove_plate(void *pt, t_sink **head)
 {
 	t_sink	*prev;
 	t_sink	*tmp;
 
 	if (!head || !*head)
-		return (pt);
+		return ;
 	tmp = *head;
 	prev = NULL;
 	while (tmp)
@@ -73,7 +73,7 @@ void	*remove_plate(void *pt, t_sink **head)
 			else
 				*head = tmp->next;
 			free(tmp);
-			return (pt);
+			return ;
 		}
 		prev = tmp;
 		tmp = tmp->next;
