@@ -6,7 +6,7 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 11:04:05 by secros            #+#    #+#             */
-/*   Updated: 2025/02/13 11:04:34 by secros           ###   ########.fr       */
+/*   Updated: 2025/02/13 11:20:39 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@
 # define FG_BRIGHT_MAGENTA "\033[95m"
 # define FG_BRIGHT_CYAN    "\033[96m"
 # define FG_BRIGHT_WHITE   "\033[97m"
+
+# define BOLD "\033[1m"
 
 # define RESET   "\033[0m"
 
