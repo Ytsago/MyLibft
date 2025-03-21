@@ -6,14 +6,14 @@
 /*   By: secros <secros@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:18:31 by secros            #+#    #+#             */
-/*   Updated: 2025/03/21 13:47:56 by secros           ###   ########.fr       */
+/*   Updated: 2025/03/21 13:48:06 by secros           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BT_MALLOC_H
 # define BT_MALLOC_H
 
-# include "libft.h"
+# include <stdlib.h>
 
 typedef struct s_sink
 {
